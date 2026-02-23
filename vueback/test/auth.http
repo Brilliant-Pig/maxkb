@@ -1,0 +1,131 @@
+### 基础配置
+@baseUrl = http://127.0.0.1:33001/api/auth
+@email = loveljw@gdmu.edu.cn
+@password = 123456
+
+# ==========================================
+# 第一阶段：身份认证流程 (Authentication)
+# ==========================================
+
+### 1.1 发送邮件验证码
+# 注意：需确保后端 authService 中的 SMTP 配置正确
+POST {{baseUrl}}/send-code
+Content-Type: application/json
+
+{
+    "email": "{{email}}"
+}
+
+### 1.2 用户注册 (GitHub 风格)
+# 注册成功后，后端会直接返回 token 和 role
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+    "username": "TeacherZhang",
+    "email": "{{email}}",
+    "password": "{{password}}",
+    "code": "810407" ,
+    "role": "teacher"
+}
+
+### 1.3 用户登录
+# @name login
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "email": "{{email}}",
+    "password": "{{password}}"
+}
+
+### 获取登录后的 Token (用于后续请求)
+@authToken = {{login.response.body.data.token}}
+
+### 1.4 退出登录 (测试黑名单功能)
+# 调用此接口后，authToken 应该会被加入数据库黑名单
+POST {{baseUrl}}/logout
+Authorization: Bearer {{authToken}}
+
+
+# ==========================================
+# 第二阶段：权限与失效性测试 (Authorization)
+# ==========================================
+
+### 2.1 校验凭证有效性 (在退出登录后执行此项)
+# 预期结果：即使 Token 没过期，后端也应返回 401 "凭证已失效"
+POST {{baseUrl}}/tokenVerify
+Authorization: Bearer {{authToken}}
+
+
+### 2.2 测试受保护的数据接口 (权限拦截测试)
+# 预期结果：401 Unauthorized
+GET http://127.0.0.1:33001/api/teacher/dashboard
+Authorization: Bearer {{authToken}}
+
+# ==========================================
+# 第二阶段：权限与角色测试 (Authorization)
+# ==========================================
+
+### 2.1 校验凭证有效性
+POST {{baseUrl}}/tokenVerify
+Authorization: Bearer {{authToken}}
+
+### 2.2 测试教师端数据访问 (权限拦截测试)
+# 如果你是用学生账号登录，这里应该被拦截或返回权限不足
+GET http://127.0.0.1:33001/api/user/getClassStats
+Authorization: Bearer {{authToken}}
+
+
+# ==========================================
+# 第三阶段：业务功能联调 (Business)
+# ==========================================
+
+### 3.1 提交作业 AI 批改
+POST http://127.0.0.1:33001/api/user/addQuestion
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+    "studentId": "TeacherZhang",
+    "content": "请解释一下操作系统的页式存储管理"
+}
+# ==========================================
+# 第三阶段：个人信息修改测试 (Profile Update)
+# ==========================================
+
+### 3.1 测试修改密码
+# 预期结果：code: 0, "密码修改成功，请重新登录"
+# 注意：修改成功后，旧的 authToken 将因为密码变更（或业务逻辑要求）而建议作废
+POST {{baseUrl}}/update-password
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+    "oldPassword": "{{password}}",
+    "newPassword": "654321"
+}
+
+
+### 3.2 测试修改邮箱
+# 预期结果：code: 0, "邮箱修改成功"
+# 验证：修改后尝试用新邮箱登录
+POST {{baseUrl}}/update-email
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+    "newEmail": "new_test_email@example.com",
+    "password": "new_password_123" 
+}
+
+
+### 3.3 使用新密码和新邮箱尝试登录 (验证闭环)
+# 预期结果：登录成功，返回新的 Token
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "email": "loveljw@gdmu.edu.cn",
+    "password": "654321"
+}

@@ -1,0 +1,89 @@
+### 基础配置
+@baseUrl = http://127.0.0.1:33001/api/user
+
+# ==========================================
+# 1. 学生提问模块测试 (student_questions)
+# ==========================================
+
+### 1.1 获取所有问题列表 (FAQ)
+GET {{baseUrl}}/getQuestions
+Content-Type: application/json
+
+### 1.2 学生提交新问题 (测试物理入库)
+# 提交后，你应该在 Navicat 的 student_questions 表里看到新记录
+POST {{baseUrl}}/addQuestion
+Content-Type: application/json
+
+{
+    "studentId": "STUD001",
+    "content": "请问 PV 操作中，信号量 S 为负数时代表什么含义？"
+}
+
+### 1.3 修改提问内容
+PUT {{baseUrl}}/updateQuestion
+Content-Type: application/json
+
+{
+    "id": 1,
+    "content": "修改后的问题：如何理解虚拟内存的置换算法？"
+}
+
+### 1.4 物理删除学生提问 (彻底消失测试)
+# 这里的 id 请参考数据库中实际生成的 id
+DELETE {{baseUrl}}/deleteQuestion?id=1&type=question
+
+
+# ==========================================
+# 2. 考点热点点击模块测试 (os_topic_clicks)
+# ==========================================
+
+### 2.1 记录一次考点点击 (热度增加)
+# 第一次执行会 INSERT，后续执行会 UPDATE 并让 click_count +1
+POST {{baseUrl}}/recordClick
+Content-Type: application/json
+
+{
+    "topicName": "死锁避免-银行家算法"
+}
+
+### 2.2 物理删除热点记录 (例如删除“问题1”)
+# type 为 topic 时，id 传的是 topic_name 字符串
+DELETE {{baseUrl}}/deleteQuestion?id=死锁避免-银行家算法&type=topic
+
+
+# ==========================================
+# 3. 效能感与系统评价测试
+# ==========================================
+
+### 3.1 提交学业自我效能感 (Post-test)
+# 后端会自动计算平均掌握度 avg_progress
+POST {{baseUrl}}/submitEfficacy
+Content-Type: application/json
+
+{
+    "studentId": "STUD001",
+    "q1": 5, "q2": 4, "q3": 5,
+    "q4": 3, "q5": 4, "q6": 5,
+    "q7": 5, "q8": 4, "q9": 5
+}
+
+### 3.2 提交 SUS 系统可用性评价
+POST {{baseUrl}}/submitSus
+Content-Type: application/json
+
+{
+    "studentId": "STUD001",
+    "susScore": 82.5,
+    "rawAnswers": [5, 1, 5, 2, 5, 1, 5, 2, 4, 1]
+}
+
+
+# ==========================================
+# 4. 教师端科研统计接口测试
+# ==========================================
+
+### 4.1 获取全班掌握度与 SUS 平均值
+GET {{baseUrl}}/getClassStats
+
+### 4.2 获取所有学生状态看板
+GET {{baseUrl}}/getStudentStatus
