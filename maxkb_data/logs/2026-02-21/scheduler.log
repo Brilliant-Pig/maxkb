@@ -1,0 +1,19 @@
+Run time of job "client_access_num_reset_job (trigger: cron[hour='0', minute='0', second='0'], next run at: 2026-02-22 00:00:00 CST)" was missed by 0:00:45.723869
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-21 00:00:00 CST)" was missed by 0:00:45.754776
+Run time of job "clean_chat_log_job (trigger: cron[hour='0', minute='5'], next run at: 2026-02-22 00:05:00 CST)" was missed by 0:00:07.125734
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-21 01:00:00 CST)" was missed by 0:00:42.553647
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.751 seconds.
+Prefix dict has been built successfully.
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-21 01:00:00 CST)" was missed by 0:01:07.112414
+[2026-02-21 12:01:07 +0800] [79] [INFO] Starting gunicorn 23.0.0
+[2026-02-21 12:01:07 +0800] [79] [INFO] Listening at: http://127.0.0.1:6060 (79)
+[2026-02-21 12:01:07 +0800] [79] [INFO] Using worker: gthread
+[2026-02-21 12:01:07 +0800] [255] [INFO] Booting worker with pid: 255
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-21 14:00:00 CST)" was missed by 0:00:01.731368
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-21 18:30:00 CST)" was missed by 0:05:40.090961
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-21 19:00:00 CST)" was missed by 0:01:20.189629
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-21 19:30:00 CST)" was missed by 0:01:36.124259
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-21 23:30:00 CST)" was missed by 0:11:52.234674
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-22 00:00:00 CST)" was missed by 0:00:20.748417

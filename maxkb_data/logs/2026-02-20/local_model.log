@@ -1,0 +1,8 @@
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.684 seconds.
+Prefix dict has been built successfully.
+[2026-02-20 21:04:34 +0800] [80] [INFO] Starting gunicorn 23.0.0
+[2026-02-20 21:04:34 +0800] [80] [INFO] Listening at: http://127.0.0.1:11636 (80)
+[2026-02-20 21:04:34 +0800] [80] [INFO] Using worker: gthread
+[2026-02-20 21:04:34 +0800] [246] [INFO] Booting worker with pid: 246

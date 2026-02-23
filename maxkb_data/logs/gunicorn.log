@@ -1,0 +1,146 @@
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.135 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 00:52:10 +0800] [79] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 00:52:10 +0800] [79] [INFO] Listening at: http://0.0.0.0:8080 (79)
+[2026-02-23 00:52:10 +0800] [79] [INFO] Using worker: gthread
+[2026-02-23 00:52:10 +0800] [260] [INFO] Booting worker with pid: 260
+[2026-02-23 00:52:10 +0800] [261] [INFO] Booting worker with pid: 261
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 4.104 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 11:54:42 +0800] [97] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 11:54:42 +0800] [97] [INFO] Listening at: http://0.0.0.0:8080 (97)
+[2026-02-23 11:54:42 +0800] [97] [INFO] Using worker: gthread
+[2026-02-23 11:54:42 +0800] [334] [INFO] Booting worker with pid: 334
+[2026-02-23 11:54:42 +0800] [335] [INFO] Booting worker with pid: 335
+2026-02-23 11:54:50 [log WARNING] Not Found: /chat/api/profile
+2026-02-23 11:54:59 [log WARNING] Not Found: /chat/api/profile
+  File "/usr/local/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/local/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.11/threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 281, in handle
+    keepalive = self.handle_request(req, conn)
+  File "/opt/py3/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 333, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/views.py", line 330, in perform_authentication
+    request.user
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/request.py", line 232, in user
+    self._authenticate()
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/opt/maxkb-app/apps/common/auth/authenticate.py", line 91, in authenticate
+    traceback.print_stack()
+2026-02-23 11:55:17 [log WARNING] Unauthorized: /admin/api/user/profile
+2026-02-23 11:55:40 [log WARNING] Not Found: /chat/api/profile
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.741 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 14:57:19 +0800] [79] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 14:57:19 +0800] [79] [INFO] Listening at: http://0.0.0.0:8080 (79)
+[2026-02-23 14:57:19 +0800] [79] [INFO] Using worker: gthread
+[2026-02-23 14:57:19 +0800] [243] [INFO] Booting worker with pid: 243
+[2026-02-23 14:57:19 +0800] [245] [INFO] Booting worker with pid: 245
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 2.123 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 15:59:33 +0800] [78] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:59:33 +0800] [78] [INFO] Listening at: http://0.0.0.0:8080 (78)
+[2026-02-23 15:59:33 +0800] [78] [INFO] Using worker: gthread
+[2026-02-23 15:59:33 +0800] [242] [INFO] Booting worker with pid: 242
+[2026-02-23 15:59:33 +0800] [245] [INFO] Booting worker with pid: 245
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.934 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 17:54:48 +0800] [81] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 17:54:48 +0800] [81] [INFO] Listening at: http://0.0.0.0:8080 (81)
+[2026-02-23 17:54:48 +0800] [81] [INFO] Using worker: gthread
+[2026-02-23 17:54:48 +0800] [237] [INFO] Booting worker with pid: 237
+[2026-02-23 17:54:48 +0800] [242] [INFO] Booting worker with pid: 242
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.107 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 19:55:05 +0800] [80] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 19:55:05 +0800] [80] [INFO] Listening at: http://0.0.0.0:8080 (80)
+[2026-02-23 19:55:05 +0800] [80] [INFO] Using worker: gthread
+[2026-02-23 19:55:05 +0800] [256] [INFO] Booting worker with pid: 256
+[2026-02-23 19:55:05 +0800] [257] [INFO] Booting worker with pid: 257
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /tmp/jieba.cache
+Loading model cost 0.792 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 22:11:33 +0800] [96] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 22:11:33 +0800] [96] [INFO] Listening at: http://0.0.0.0:8080 (96)
+[2026-02-23 22:11:33 +0800] [96] [INFO] Using worker: gthread
+[2026-02-23 22:11:33 +0800] [252] [INFO] Booting worker with pid: 252
+[2026-02-23 22:11:33 +0800] [254] [INFO] Booting worker with pid: 254
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /tmp/jieba.cache
+Loading model cost 0.733 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 22:13:02 +0800] [79] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 22:13:02 +0800] [79] [INFO] Listening at: http://0.0.0.0:8080 (79)
+[2026-02-23 22:13:02 +0800] [79] [INFO] Using worker: gthread
+[2026-02-23 22:13:02 +0800] [229] [INFO] Booting worker with pid: 229
+[2026-02-23 22:13:02 +0800] [231] [INFO] Booting worker with pid: 231

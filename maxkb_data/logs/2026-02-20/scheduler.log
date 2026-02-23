@@ -1,0 +1,18 @@
+Run time of job "client_access_num_reset_job (trigger: cron[hour='0', minute='0', second='0'], next run at: 2026-02-21 00:00:00 CST)" was missed by 0:00:02.627755
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-20 00:30:00 CST)" was missed by 0:00:02.666838
+2026-02-20 00:05:00 [clean_chat_job INFO] 开始清理聊天日志
+2026-02-20 00:05:00 [clean_chat_job INFO] 结束清理聊天日志
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.689 seconds.
+Prefix dict has been built successfully.
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-20 00:30:00 CST)" was missed by 0:04:34.632234
+[2026-02-20 21:04:34 +0800] [81] [INFO] Starting gunicorn 23.0.0
+[2026-02-20 21:04:34 +0800] [81] [INFO] Listening at: http://127.0.0.1:6060 (81)
+[2026-02-20 21:04:34 +0800] [81] [INFO] Using worker: gthread
+[2026-02-20 21:04:34 +0800] [251] [INFO] Booting worker with pid: 251
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-20 22:00:00 CST)" was missed by 0:00:05.299751
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-20 22:30:00 CST)" was missed by 0:00:09.771701
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-20 23:00:00 CST)" was missed by 0:00:27.198424
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-20 23:30:00 CST)" was missed by 0:00:41.457757
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-21 00:00:00 CST)" was missed by 0:00:44.292899

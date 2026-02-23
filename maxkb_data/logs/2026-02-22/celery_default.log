@@ -1,0 +1,56 @@
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 2.467 seconds.
+Prefix dict has been built successfully.
+/opt/py3/lib/python3.11/site-packages/celery/platforms.py:841: SecurityWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  warnings.warn(SecurityWarning(ROOT_DISCOURAGED.format(
+ 
+ -------------- celery@b8d24a26e626 v5.5.3 (immunity)
+--- ***** ----- 
+-- ******* ---- Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.41 2026-02-22 15:18:44
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         MaxKB:0x7a4159f6ff10
+- ** ---------- .> transport:   redis://:**@127.0.0.1:6379/0
+- ** ---------- .> results:     redis://:**@127.0.0.1:6379/0
+- *** --- * --- .> concurrency: 10 (thread)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.836 seconds.
+Prefix dict has been built successfully.
+/opt/py3/lib/python3.11/site-packages/celery/platforms.py:841: SecurityWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  warnings.warn(SecurityWarning(ROOT_DISCOURAGED.format(
+ 
+ -------------- celery@b8d24a26e626 v5.5.3 (immunity)
+--- ***** ----- 
+-- ******* ---- Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.41 2026-02-22 21:21:59
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         MaxKB:0x7b01af70ff90
+- ** ---------- .> transport:   redis://:**@127.0.0.1:6379/0
+- ** ---------- .> results:     redis://:**@127.0.0.1:6379/0
+- *** --- * --- .> concurrency: 10 (thread)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+

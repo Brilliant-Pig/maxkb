@@ -1,0 +1,28 @@
+2026-02-22 00:00:00 [client_access_num_job INFO] start reset access_num
+2026-02-22 00:00:00 [client_access_num_job INFO] end reset access_num
+2026-02-22 00:05:00 [clean_chat_job INFO] 开始清理聊天日志
+2026-02-22 00:05:00 [clean_chat_job INFO] 结束清理聊天日志
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-22 01:00:00 CST)" was missed by 0:00:01.171933
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-22 01:30:00 CST)" was missed by 0:00:01.434526
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 3.361 seconds.
+Prefix dict has been built successfully.
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-22 01:30:00 CST)" was missed by 0:18:43.240986
+[2026-02-22 15:18:43 +0800] [78] [INFO] Starting gunicorn 23.0.0
+[2026-02-22 15:18:43 +0800] [78] [INFO] Listening at: http://127.0.0.1:6060 (78)
+[2026-02-22 15:18:43 +0800] [78] [INFO] Using worker: gthread
+[2026-02-22 15:18:43 +0800] [314] [INFO] Booting worker with pid: 314
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-22 16:00:00 CST)" was missed by 0:00:41.536012
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-22 16:30:00 CST)" was missed by 0:01:57.862812
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.115 seconds.
+Prefix dict has been built successfully.
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-22 16:30:00 CST)" was missed by 0:21:58.227730
+[2026-02-22 21:21:58 +0800] [79] [INFO] Starting gunicorn 23.0.0
+[2026-02-22 21:21:58 +0800] [79] [INFO] Listening at: http://127.0.0.1:6060 (79)
+[2026-02-22 21:21:58 +0800] [79] [INFO] Using worker: gthread
+[2026-02-22 21:21:58 +0800] [260] [INFO] Booting worker with pid: 260
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-22 23:30:00 CST)" was missed by 0:00:25.668619
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 00:00:00 CST)" was missed by 0:00:02.340145

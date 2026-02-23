@@ -1,0 +1,64 @@
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.083 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 00:52:09 +0800] [82] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 00:52:09 +0800] [82] [INFO] Listening at: http://127.0.0.1:11636 (82)
+[2026-02-23 00:52:09 +0800] [82] [INFO] Using worker: gthread
+[2026-02-23 00:52:09 +0800] [252] [INFO] Booting worker with pid: 252
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 4.265 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 11:54:42 +0800] [99] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 11:54:42 +0800] [99] [INFO] Listening at: http://127.0.0.1:11636 (99)
+[2026-02-23 11:54:42 +0800] [99] [INFO] Using worker: gthread
+[2026-02-23 11:54:42 +0800] [332] [INFO] Booting worker with pid: 332
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.745 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 14:57:19 +0800] [78] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 14:57:19 +0800] [78] [INFO] Listening at: http://127.0.0.1:11636 (78)
+[2026-02-23 14:57:19 +0800] [78] [INFO] Using worker: gthread
+[2026-02-23 14:57:19 +0800] [241] [INFO] Booting worker with pid: 241
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 2.070 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 15:59:33 +0800] [79] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:59:33 +0800] [79] [INFO] Listening at: http://127.0.0.1:11636 (79)
+[2026-02-23 15:59:33 +0800] [79] [INFO] Using worker: gthread
+[2026-02-23 15:59:33 +0800] [244] [INFO] Booting worker with pid: 244
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.954 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 17:54:48 +0800] [78] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 17:54:48 +0800] [78] [INFO] Listening at: http://127.0.0.1:11636 (78)
+[2026-02-23 17:54:48 +0800] [78] [INFO] Using worker: gthread
+[2026-02-23 17:54:48 +0800] [245] [INFO] Booting worker with pid: 245
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.100 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 19:55:05 +0800] [81] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 19:55:05 +0800] [81] [INFO] Listening at: http://127.0.0.1:11636 (81)
+[2026-02-23 19:55:05 +0800] [81] [INFO] Using worker: gthread
+[2026-02-23 19:55:05 +0800] [254] [INFO] Booting worker with pid: 254
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /tmp/jieba.cache
+Loading model cost 0.791 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 22:11:33 +0800] [98] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 22:11:33 +0800] [98] [INFO] Listening at: http://127.0.0.1:11636 (98)
+[2026-02-23 22:11:33 +0800] [98] [INFO] Using worker: gthread
+[2026-02-23 22:11:33 +0800] [257] [INFO] Booting worker with pid: 257
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.863 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 22:13:02 +0800] [81] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 22:13:02 +0800] [81] [INFO] Listening at: http://127.0.0.1:11636 (81)
+[2026-02-23 22:13:02 +0800] [81] [INFO] Using worker: gthread
+[2026-02-23 22:13:02 +0800] [224] [INFO] Booting worker with pid: 224

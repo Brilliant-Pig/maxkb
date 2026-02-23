@@ -1,0 +1,16 @@
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 3.503 seconds.
+Prefix dict has been built successfully.
+[2026-02-22 15:18:42 +0800] [80] [INFO] Starting gunicorn 23.0.0
+[2026-02-22 15:18:43 +0800] [80] [INFO] Listening at: http://127.0.0.1:11636 (80)
+[2026-02-22 15:18:43 +0800] [80] [INFO] Using worker: gthread
+[2026-02-22 15:18:43 +0800] [306] [INFO] Booting worker with pid: 306
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.074 seconds.
+Prefix dict has been built successfully.
+[2026-02-22 21:21:58 +0800] [78] [INFO] Starting gunicorn 23.0.0
+[2026-02-22 21:21:58 +0800] [78] [INFO] Listening at: http://127.0.0.1:11636 (78)
+[2026-02-22 21:21:58 +0800] [78] [INFO] Using worker: gthread
+[2026-02-22 21:21:58 +0800] [255] [INFO] Booting worker with pid: 255

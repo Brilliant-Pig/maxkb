@@ -1,0 +1,40 @@
+﻿version: '3.8'
+
+services:
+  maxkb:
+    image: 1panel/maxkb:v2.3.0
+    container_name: maxkb
+    ports:
+      - "8090:8080"
+    volumes:
+      # 数据目录（包含数据库、知识库、配置等）
+      - ./data:/opt/maxkb/data
+      - ./conf:/opt/maxkb/conf
+      - ./logs:/opt/maxkb/logs
+      - ./local:/opt/maxkb/local
+      - ./app:/opt/maxkb/app
+    environment:
+      # 数据库配置
+      - POSTGRES_PASSWORD=Password123@postgres
+      - POSTGRES_MAX_CONNECTIONS=1000
+      - REDIS_PASSWORD=Password123@redis
+      # MaxKB 配置
+      - MAXKB_DB_NAME=maxkb
+      - MAXKB_DB_USER=root
+      - MAXKB_DB_PASSWORD=Password123@postgres
+      - MAXKB_DB_HOST=127.0.0.1
+      - MAXKB_DB_PORT=5432
+      - MAXKB_REDIS_HOST=127.0.0.1
+      - MAXKB_REDIS_PORT=6379
+      - MAXKB_REDIS_DB=0
+      - MAXKB_REDIS_PASSWORD=Password123@redis
+      # 其他配置
+      - PYTHONUNBUFFERED=1
+      - MAXKB_LOG_LEVEL=INFO
+    restart: unless-stopped
+    networks:
+      - maxkb-network
+
+networks:
+  maxkb-network:
+    driver: bridge

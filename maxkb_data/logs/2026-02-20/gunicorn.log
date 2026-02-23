@@ -1,0 +1,185 @@
+2026-02-19 23:59:25 [log WARNING] Not Found: /chat/api/profile
+2026-02-19 23:59:57 [log WARNING] Not Found: /chat/api/profile
+2026-02-20 00:00:03 [log WARNING] Not Found: /chat/api/profile
+2026-02-20 00:00:16 [log WARNING] Not Found: /chat/api/profile
+2026-02-20 00:01:31 [log WARNING] Not Found: /chat/api/profile
+2026-02-20 00:05:52 [log WARNING] Not Found: /chat/api/profile
+2026-02-20 00:07:23 [log WARNING] Not Found: /chat/api/profile
+2026-02-20 00:07:31 [log WARNING] Not Found: /chat/api/profile
+2026-02-20 00:10:48 [log WARNING] Not Found: /chat/api/profile
+2026-02-20 00:10:54 [log WARNING] Not Found: /chat/api/profile
+2026-02-20 00:16:09 [log WARNING] Not Found: /chat/api/profile
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.666 seconds.
+Prefix dict has been built successfully.
+[2026-02-20 21:04:34 +0800] [79] [INFO] Starting gunicorn 23.0.0
+[2026-02-20 21:04:34 +0800] [79] [INFO] Listening at: http://0.0.0.0:8080 (79)
+[2026-02-20 21:04:34 +0800] [79] [INFO] Using worker: gthread
+[2026-02-20 21:04:34 +0800] [250] [INFO] Booting worker with pid: 250
+[2026-02-20 21:04:34 +0800] [252] [INFO] Booting worker with pid: 252
+2026-02-20 21:33:40 [log WARNING] Not Found: /chat/api/profile
+2026-02-20 21:33:46 [log WARNING] Not Found: /chat/api/profile
+2026-02-20 21:34:10 [log WARNING] Not Found: /chat/api/profile
+  File "/usr/local/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/local/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.11/threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 281, in handle
+    keepalive = self.handle_request(req, conn)
+  File "/opt/py3/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 333, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/views.py", line 330, in perform_authentication
+    request.user
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/request.py", line 232, in user
+    self._authenticate()
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/opt/maxkb-app/apps/common/auth/authenticate.py", line 91, in authenticate
+    traceback.print_stack()
+2026-02-20 21:42:03 [log WARNING] Unauthorized: /admin/api/user/profile
+  File "/usr/local/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/local/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.11/threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 281, in handle
+    keepalive = self.handle_request(req, conn)
+  File "/opt/py3/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 333, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/opt/py3/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/views.py", line 330, in perform_authentication
+    request.user
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/request.py", line 232, in user
+    self._authenticate()
+  File "/opt/py3/lib/python3.11/site-packages/rest_framework/request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/opt/maxkb-app/apps/common/auth/authenticate.py", line 91, in authenticate
+    traceback.print_stack()
+2026-02-20 21:42:03 [log WARNING] Unauthorized: /admin/api/user/profile
+2026-02-20 22:35:46 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 22:38:05 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 22:41:42 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 22:42:22 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 22:44:02 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 22:48:57 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e
+2026-02-20 22:57:09 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 22:57:25 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 22:57:34 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 23:03:52 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e
+2026-02-20 23:05:27 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 23:06:11 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 23:07:07 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 23:07:52 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 23:08:17 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 23:08:29 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 23:36:02 [log WARNING] Not Found: /chat/api/019c525e-7671-7c63-9d84-20b12fc1574e/chat
+2026-02-20 23:47:06 [log WARNING] Not Found: /chat/api/74b3dfb549785c69/chat
+2026-02-20 23:47:11 [log WARNING] Not Found: /chat/api/74b3dfb549785c69/chat
+2026-02-20 23:47:48 [log WARNING] Not Found: /chat/api/74b3dfb549785c69/chat

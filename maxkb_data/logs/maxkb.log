@@ -1,0 +1,6 @@
+2026-02-23 00:05:00 [clean_chat_job INFO] 开始清理聊天日志
+2026-02-23 00:05:00 [clean_chat_job INFO] 结束清理聊天日志
+2026-02-23 11:54:50 [log WARNING] Not Found: /chat/api/profile
+2026-02-23 11:54:59 [log WARNING] Not Found: /chat/api/profile
+2026-02-23 11:55:17 [log WARNING] Unauthorized: /admin/api/user/profile
+2026-02-23 11:55:40 [log WARNING] Not Found: /chat/api/profile

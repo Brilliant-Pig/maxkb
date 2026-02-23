@@ -1,0 +1,85 @@
+Run time of job "client_access_num_reset_job (trigger: cron[hour='0', minute='0', second='0'], next run at: 2026-02-24 00:00:00 CST)" was missed by 0:00:03.230206
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 00:00:00 CST)" was missed by 0:00:03.266979
+2026-02-23 00:05:00 [clean_chat_job INFO] 开始清理聊天日志
+2026-02-23 00:05:00 [clean_chat_job INFO] 结束清理聊天日志
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 01:00:00 CST)" was missed by 0:00:02.837421
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.098 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 00:52:10 +0800] [81] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 00:52:10 +0800] [81] [INFO] Listening at: http://127.0.0.1:6060 (81)
+[2026-02-23 00:52:10 +0800] [81] [INFO] Using worker: gthread
+[2026-02-23 00:52:10 +0800] [255] [INFO] Booting worker with pid: 255
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 4.047 seconds.
+Prefix dict has been built successfully.
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 02:00:00 CST)" was missed by 0:24:42.748880
+[2026-02-23 11:54:42 +0800] [96] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 11:54:42 +0800] [96] [INFO] Listening at: http://127.0.0.1:6060 (96)
+[2026-02-23 11:54:42 +0800] [96] [INFO] Using worker: gthread
+[2026-02-23 11:54:42 +0800] [336] [INFO] Booting worker with pid: 336
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 12:30:00 CST)" was missed by 0:00:11.138196
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 13:00:00 CST)" was missed by 0:01:26.614303
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 13:30:00 CST)" was missed by 0:01:39.941513
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 14:00:00 CST)" was missed by 0:01:46.459439
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 15:00:00 CST)" was missed by 0:05:34.137708
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.744 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 14:57:19 +0800] [80] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 14:57:19 +0800] [80] [INFO] Listening at: http://127.0.0.1:6060 (80)
+[2026-02-23 14:57:19 +0800] [80] [INFO] Using worker: gthread
+[2026-02-23 14:57:19 +0800] [244] [INFO] Booting worker with pid: 244
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 15:30:00 CST)" was missed by 0:00:05.717273
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 16:00:00 CST)" was missed by 0:01:47.476738
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 2.059 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 15:59:33 +0800] [77] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:59:33 +0800] [77] [INFO] Listening at: http://127.0.0.1:6060 (77)
+[2026-02-23 15:59:33 +0800] [77] [INFO] Using worker: gthread
+[2026-02-23 15:59:33 +0800] [246] [INFO] Booting worker with pid: 246
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 17:00:00 CST)" was missed by 0:00:50.378527
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 17:30:00 CST)" was missed by 0:01:15.680184
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 18:00:00 CST)" was missed by 0:01:16.241358
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.943 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 17:54:48 +0800] [79] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 17:54:48 +0800] [79] [INFO] Listening at: http://127.0.0.1:6060 (79)
+[2026-02-23 17:54:48 +0800] [79] [INFO] Using worker: gthread
+[2026-02-23 17:54:48 +0800] [247] [INFO] Booting worker with pid: 247
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 18:30:00 CST)" was missed by 0:00:25.339801
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 19:00:00 CST)" was missed by 0:02:07.386422
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.109 seconds.
+Prefix dict has been built successfully.
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 19:00:00 CST)" was missed by 0:25:05.678983
+[2026-02-23 19:55:05 +0800] [79] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 19:55:05 +0800] [79] [INFO] Listening at: http://127.0.0.1:6060 (79)
+[2026-02-23 19:55:05 +0800] [79] [INFO] Using worker: gthread
+[2026-02-23 19:55:05 +0800] [258] [INFO] Booting worker with pid: 258
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 20:30:00 CST)" was missed by 0:00:17.910506
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /tmp/jieba.cache
+Loading model cost 0.755 seconds.
+Prefix dict has been built successfully.
+Run time of job "clean_debug_file (trigger: cron[hour='*', minute='*/30', second='0'], next run at: 2026-02-23 20:30:00 CST)" was missed by 0:11:33.898086
+[2026-02-23 22:11:34 +0800] [97] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 22:11:34 +0800] [97] [INFO] Listening at: http://127.0.0.1:6060 (97)
+[2026-02-23 22:11:34 +0800] [97] [INFO] Using worker: gthread
+[2026-02-23 22:11:34 +0800] [258] [INFO] Booting worker with pid: 258
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /tmp/jieba.cache
+Loading model cost 0.748 seconds.
+Prefix dict has been built successfully.
+[2026-02-23 22:13:02 +0800] [78] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 22:13:02 +0800] [78] [INFO] Listening at: http://127.0.0.1:6060 (78)
+[2026-02-23 22:13:02 +0800] [78] [INFO] Using worker: gthread
+[2026-02-23 22:13:02 +0800] [228] [INFO] Booting worker with pid: 228
