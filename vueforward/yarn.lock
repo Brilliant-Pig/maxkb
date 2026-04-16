@@ -3598,6 +3598,11 @@ postcss@^8.5.6:
     picocolors "^1.1.1"
     source-map-js "^1.2.1"
 
+postprocessing@^6.39.0:
+  version "6.39.0"
+  resolved "https://registry.npmmirror.com/postprocessing/-/postprocessing-6.39.0.tgz"
+  integrity sha512-/G6JY8hs426lcto/pBZlnFSkyEo1fHsh4gy7FPJtq1SaSUOzJgDW6f6f1K/+aMOYzK/eQEefyOb3++jPPIUeDA==
+
 proxy-from-env@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmmirror.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz"
@@ -3765,6 +3770,11 @@ tailwind-merge@^1.8.0:
   version "1.14.0"
   resolved "https://registry.npmmirror.com/tailwind-merge/-/tailwind-merge-1.14.0.tgz"
   integrity sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==
+
+three@^0.183.2, "three@>= 0.168.0 < 0.184.0":
+  version "0.183.2"
+  resolved "https://registry.npmmirror.com/three/-/three-0.183.2.tgz"
+  integrity sha512-di3BsL2FEQ1PA7Hcvn4fyJOlxRRgFYBpMTcyOgkwJIaDOdJMebEFPA+t98EvjuljDx4hNulAGwF6KIjtwI5jgQ==
 
 tinyglobby@^0.2.15:
   version "0.2.15"

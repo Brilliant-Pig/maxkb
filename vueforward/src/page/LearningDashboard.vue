@@ -308,61 +308,223 @@ const susItems = [
 </script>
 
 <style scoped>
-/* 保持原有样式不变 */
-.dashboard-container { display: flex; height: 100vh; background: #0f172a; color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; }
-.stats-sidebar { width: 320px; background: #1e293b; padding: 40px 24px; border-right: 1px solid rgba(255,255,255,0.05); }
+/* -----------------------------------------------------------
+   1. 基础重置 & 全局氛围
+----------------------------------------------------------- */
+.dashboard-container { 
+  display: flex; 
+  height: 100vh; 
+  background: #020617; 
+  color: #e2e8f0; 
+  font-family: 'Inter', system-ui, sans-serif; 
+}
+
+/* -----------------------------------------------------------
+   2. 侧边栏
+----------------------------------------------------------- */
+.stats-sidebar { 
+  width: 320px; 
+  background: rgba(15, 23, 42, 0.4); 
+  backdrop-filter: blur(20px); 
+  padding: 40px 24px; 
+  border-right: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
 .sidebar-header { display: flex; align-items: center; gap: 12px; margin-bottom: 40px; }
-.sidebar-header h2 { font-size: 1.4rem; font-weight: 800; color: #3b82f6; }
-.progress-card { background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.05); padding: 24px; border-radius: 16px; margin-bottom: 30px; }
-.percent { font-size: 1.8rem; font-weight: 900; color: #3b82f6; }
-.progress-bar { height: 8px; background: #334155; border-radius: 4px; margin: 12px 0; overflow: hidden; }
-.fill { background: linear-gradient(90deg, #3b82f6, #60a5fa); height: 100%; transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
-.status-text { font-size: 0.75rem; color: #64748b; }
+.sidebar-header h2 { 
+  font-size: 1.4rem; 
+  font-weight: 800; 
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.3));
+}
+
+.progress-card { 
+  background: rgba(0, 0, 0, 0.3); 
+  border-radius: 16px; 
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  padding: 24px; 
+  margin-bottom: 30px; 
+}
+
+.percent { 
+  font-size: 1.8rem; 
+  font-weight: 900; 
+  color: #3b82f6; 
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+.progress-bar { 
+  height: 8px; 
+  background: rgba(255, 255, 255, 0.05); 
+  border-radius: 4px; 
+  margin: 12px 0; 
+  overflow: hidden; 
+}
+.fill { 
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+  background-size: 200% auto;
+  height: 100%; 
+  animation: bar-glow 2s linear infinite;
+}
+@keyframes bar-glow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
 .nav-menu { display: flex; flex-direction: column; gap: 12px; }
-.nav-menu button { display: flex; align-items: center; gap: 12px; padding: 16px; background: transparent; border: 1px solid transparent; border-radius: 12px; color: #94a3b8; font-weight: 600; cursor: pointer; transition: all 0.2s; }
-.nav-menu button.active { background: rgba(59, 130, 246, 0.1); border-color: #3b82f6; color: white; }
-.content-area {
-  flex: 1;
-  padding: 50px;
-  padding-bottom: 120px; /* 重点：增加底部留白 */
-  overflow-y: auto;
+.nav-menu button { 
+  display: flex; align-items: center; gap: 12px; padding: 16px; 
+  background: rgba(255, 255, 255, 0.02); border: 1px solid transparent; 
+  border-radius: 12px; color: #94a3b8; font-weight: 600; cursor: pointer; 
+  transition: all 0.3s ease; 
 }
-.section-title { margin-bottom: 40px; }
-.section-title h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; }
-.subtitle { color: #64748b; font-size: 1rem; }
-.likert-table { background: #1e293b; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
-.likert-header { display: flex; justify-content: space-between; padding: 20px 30px; background: rgba(255,255,255,0.02); font-weight: bold; color: #3b82f6; }
-.options-legend { display: flex; gap: 80px; font-size: 0.85rem; }
+.nav-menu button.active { 
+  background: rgba(59, 130, 246, 0.1); border-color: #3b82f6; color: white; 
+}
+
+/* -----------------------------------------------------------
+   3. 内容区域
+----------------------------------------------------------- */
+.content-area { flex: 1; padding: 50px; padding-bottom: 120px; overflow-y: auto; }
+
+/* -----------------------------------------------------------
+   4. 学业自我效能评价 (对齐数字 + 去圈 + 蓝粉紫行交替)
+----------------------------------------------------------- */
+.likert-table { background: rgba(15, 23, 42, 0.3); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+
+.likert-header { 
+  display: flex; 
+  justify-content: space-between; 
+  padding: 20px 30px; 
+  background: rgba(255, 255, 255, 0.02); 
+  color: #3b82f6;
+}
+
+/* 文字对齐数字的核心设置 */
+.options-legend { 
+  display: flex; 
+  justify-content: space-between; 
+  width: 210px; /* 精确匹配选项区域宽度 */
+  margin-right: 5px; 
+}
+.options-legend span { color: #8b949e; font-size: 0.85rem; }
+
 .likert-row { display: flex; justify-content: space-between; align-items: center; padding: 24px 30px; border-bottom: 1px solid rgba(255,255,255,0.03); }
-.likert-q { flex: 1; font-size: 1rem; line-height: 1.6; }
-.likert-options { display: flex; gap: 12px; }
-.likert-circle { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #334155; border-radius: 50%; cursor: pointer; transition: all 0.2s; }
-input:checked + .likert-circle { background: #3b82f6; color: white; transform: scale(1.15); box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
-input[type="radio"] { display: none; }
-.sus-list { display: grid; gap: 20px; }
-.sus-card { background: #1e293b; padding: 24px; border-radius: 16px; display: flex; justify-content: space-between; align-items: center; }
-.sus-dot { padding: 8px 16px; background: #334155; border-radius: 8px; cursor: pointer; }
-input:checked + .sus-dot { background: #3b82f6; }
-.ask-input-group { display: flex; gap: 12px; margin-bottom: 40px; }
-.ask-input-group input { flex: 1; background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 18px; color: white; font-size: 1rem; }
-.ask-btn { background: #3b82f6; color: white; border: none; padding: 0 30px; border-radius: 12px; font-weight: bold; cursor: pointer; }
-.faq-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-.faq-card { background: #1e293b; padding: 24px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s; }
-.faq-card.is-student { border-left: 5px solid #3b82f6; background: rgba(59, 130, 246, 0.05); }
-.faq-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
-.faq-tag { font-size: 0.7rem; padding: 4px 10px; background: #334155; border-radius: 20px; }
-.act-btn { background: transparent; border: none; cursor: pointer; opacity: 0.6; margin-left: 8px; font-size: 1.1rem; }
-.act-btn:hover { opacity: 1; transform: scale(1.2); }
-.faq-ans { font-size: 0.9rem; color: #94a3b8; margin: 15px 0; min-height: 40px; }
-.faq-footer { display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748b; }
-.action-footer {
-  margin-top: 40px;
-  margin-bottom: 60px; /* 重点：把按钮往上顶 */
-  display: flex;
-  justify-content: flex-end;
+.likert-q { flex: 1; font-size: 1rem; color: #f1f5f9; }
+.likert-options { display: flex; gap: 5px; width: 210px; justify-content: space-between; }
+
+.likert-item input { display: none; }
+
+/* 去掉圆圈，仅保留数字本身 */
+.likert-circle { 
+  width: 38px; height: 38px; 
+  display: flex; align-items: center; justify-content: center; 
+  cursor: pointer; 
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #4b5563; /* 默认未选中的颜色 */
+  transition: all 0.3s ease;
 }
-.save-btn { background: #3b82f6; color: white; border: none; padding: 18px 40px; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2); }
-.fade-transform-enter-active, .fade-transform-leave-active { transition: all 0.4s ease; }
-.fade-transform-enter-from { opacity: 0; transform: translateY(20px); }
-.fade-transform-leave-to { opacity: 0; transform: translateY(-20px); }
+
+/* --- 蓝粉紫行交替逻辑 (学业效能) --- */
+/* 1, 4, 7...行：蓝色 */
+.likert-row:nth-of-type(3n+1) input:checked + .likert-circle { color: #3b82f6; text-shadow: 0 0 12px rgba(59, 130, 246, 0.8); font-weight: 800; transform: scale(1.2); }
+/* 2, 5, 8...行：粉色 */
+.likert-row:nth-of-type(3n+2) input:checked + .likert-circle { color: #f472b6; text-shadow: 0 0 12px rgba(244, 114, 182, 0.8); font-weight: 800; transform: scale(1.2); }
+/* 3, 6, 9...行：紫色 */
+.likert-row:nth-of-type(3n) input:checked + .likert-circle { color: #a78bfa; text-shadow: 0 0 12px rgba(167, 139, 250, 0.8); font-weight: 800; transform: scale(1.2); }
+
+/* -----------------------------------------------------------
+   5. 系统可用性评价 (SUS) (文字白色 + 去圈 + 蓝粉紫行交替)
+----------------------------------------------------------- */
+.sus-card { 
+  background: rgba(15, 23, 42, 0.3); padding: 24px; border-radius: 16px; 
+  display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 15px;
+}
+
+/* 文字白色 */
+.sus-q-text { flex: 1; font-size: 1rem; color: #ffffff; font-weight: 500; }
+.sus-options { display: flex; gap: 10px; }
+.sus-opt-label input { display: none; }
+
+/* 去掉圆圈 */
+.sus-dot { 
+  width: 35px; height: 35px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; 
+  font-size: 1.1rem;
+  color: #4b5563;
+  transition: all 0.3s ease;
+}
+
+/* --- 蓝粉紫行交替逻辑 (SUS) --- */
+/* 1, 4, 7...行：蓝色 */
+.sus-card:nth-of-type(3n+1) input:checked + .sus-dot { color: #3b82f6; text-shadow: 0 0 12px rgba(59, 130, 246, 0.8); font-weight: 800; transform: scale(1.2); }
+/* 2, 5, 8...行：粉色 */
+.sus-card:nth-of-type(3n+2) input:checked + .sus-dot { color: #f472b6; text-shadow: 0 0 12px rgba(244, 114, 182, 0.8); font-weight: 800; transform: scale(1.2); }
+/* 3, 6, 9...行：紫色 */
+.sus-card:nth-of-type(3n) input:checked + .sus-dot { color: #a78bfa; text-shadow: 0 0 12px rgba(167, 139, 250, 0.8); font-weight: 800; transform: scale(1.2); }
+
+/* -----------------------------------------------------------
+   6. 提问按钮动画效果
+----------------------------------------------------------- */
+.ask-input-group { display: flex; gap: 15px; margin-bottom: 30px; }
+.ask-input-group input { 
+  flex: 1; background: rgba(15, 23, 42, 0.3); border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px; padding: 18px; color: white; 
+}
+
+.ask-btn { 
+  background: linear-gradient(135deg, #3b82f6 0%, #f472b6 50%, #a78bfa 100%);
+  background-size: 200% auto;
+  color: white; border: none; padding: 0 30px; 
+  border-radius: 12px; font-weight: bold; cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* 按钮持续流光动画 */
+.ask-btn { animation: gradientSweep 3s infinite linear; }
+@keyframes gradientSweep {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* 按钮点击时的微震动或缩放效果 */
+.ask-btn:active {
+  transform: scale(0.95);
+  filter: brightness(1.2);
+}
+
+/* 鼠标悬浮时的发光增强 */
+.ask-btn:hover {
+  box-shadow: 0 0 20px rgba(244, 114, 182, 0.4);
+  transform: translateY(-2px);
+}
+
+/* -----------------------------------------------------------
+   7. FAQ 卡片 (保持原样)
+----------------------------------------------------------- */
+.faq-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
+.faq-card { 
+  background: rgba(0, 0, 0, 0.3); padding: 24px; border-radius: 20px; border: 1px solid rgba(139, 92, 246, 0.2);
+  transition: all 0.3s ease; position: relative;
+}
+.faq-card.is-student { border-left: 5px solid #3b82f6; background: rgba(59, 130, 246, 0.1); }
+.faq-ans { color: #94a3b8; font-size: 0.9rem; margin-top: 10px; }
+
+/* -----------------------------------------------------------
+   8. 底部保存按钮
+----------------------------------------------------------- */
+.action-footer { margin-top: 40px; margin-bottom: 60px; display: flex; justify-content: flex-end; }
+.save-btn { 
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: white; border: none; padding: 18px 40px; border-radius: 12px; 
+  font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+.save-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(124, 58, 237, 0.5); }
 </style>

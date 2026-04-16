@@ -3,7 +3,7 @@
     <aside class="admin-sidebar animate__animated animate__fadeInLeft">
       <div class="admin-logo">
         <span class="logo-icon">📊</span>
-        <span>OS-AI 教学后台</span>
+        <span>SMART BRAIN<br>教学后台</span>
       </div>
       <nav class="nav-list">
         <div 
@@ -247,36 +247,206 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.admin-container { display: flex; height: 100vh; background: #f0f2f5; color: #334155; }
-.admin-sidebar { width: 260px; background: #001529; color: white; display: flex; flex-direction: column; padding: 24px 0; }
-.admin-logo { padding: 0 24px 32px; font-size: 1.25rem; font-weight: bold; color: #3b82f6; }
-.nav-item { padding: 16px 24px; cursor: pointer; color: #94a3b8; }
-.nav-item.active { background: #1890ff; color: white; }
+/* -----------------------------------------------------------
+   1. 基础布局保持
+----------------------------------------------------------- */
+.admin-container { display: flex; height: 100vh; background: #020617; color: #f8fafc; overflow: hidden; }
+.admin-sidebar { width: 280px; background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(25px); padding: 40px 24px; border-right: 1px solid rgba(255, 255, 255, 0.05); display: flex; flex-direction: column; }
+.admin-main { flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding: 40px; }
+.admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.admin-section { background: rgba(15, 23, 42, 0.3); border-radius: 24px; padding: 30px; border: 1px solid rgba(255, 255, 255, 0.05); margin-bottom: 24px; }
 
-.admin-main { flex: 1; padding: 32px; overflow-y: auto; }
-.admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
-.status-on { color: #22c55e; font-weight: bold; }
-.btn-export { background: #3b82f6; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; }
+/* -----------------------------------------------------------
+   2. 导出 & 上传按钮：显著化 + 悬浮粉紫蓝颜色循环
+----------------------------------------------------------- */
+.btn-export, .btn-upload {
+  position: relative;
+  background: #1e293b;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+}
 
-.admin-section { background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-.btn-upload { background: #f0f7ff; color: #3b82f6; border: 1px dashed #3b82f6; padding: 8px 16px; border-radius: 6px; cursor: pointer; }
+/* 上传按钮更醒目一些 */
+.btn-upload {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+}
 
-.data-table { width: 100%; border-collapse: collapse; }
-.data-table td, .data-table th { padding: 12px; border-bottom: 1px solid #f1f5f9; text-align: left; }
-.mini-progress { height: 6px; background: #e2e8f0; border-radius: 3px; width: 100px; }
-.fill { height: 100%; background: #22c55e; }
+/* 颜色循环动画 */
+@keyframes neonRainbow {
+  0% { background-color: #f472b6; box-shadow: 0 0 20px rgba(244, 114, 182, 0.6); } /* 粉 */
+  33% { background-color: #a855f7; box-shadow: 0 0 20px rgba(168, 85, 247, 0.6); } /* 紫 */
+  66% { background-color: #3b82f6; box-shadow: 0 0 20px rgba(59, 130, 246, 0.6); }   /* 蓝 */
+  100% { background-color: #f472b6; box-shadow: 0 0 20px rgba(244, 114, 182, 0.6); }
+}
 
-.data-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
-.issue-card { border: 1px solid #f1f5f9; padding: 16px; border-radius: 10px; margin-bottom: 15px; }
-.count-badge { background: #fff1f0; color: #f5222d; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; }
-.trend-bar { height: 6px; background: #ff4d4f; border-radius: 3px; transition: width 1s; }
+.btn-export:hover, .btn-upload:hover {
+  animation: neonRainbow 3s linear infinite;
+  transform: translateY(-3px);
+  border-color: transparent;
+  color: #fff;
+}
 
-.metrics-column { display: flex; flex-direction: column; gap: 15px; }
-.metric-card { background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 4px solid #3b82f6; }
-.m-label { font-size: 0.8rem; color: #64748b; display: block; }
-.m-value { font-size: 1.5rem; font-weight: bold; color: #1e293b; }
+/* -----------------------------------------------------------
+   3. 核心内容排版：效能指标卡片（与监控面板完全对齐）
+----------------------------------------------------------- */
+/* 注意：请确保 Template 中这三个指标的容器 class 也是 "perf-grid" */
+.perf-grid, .metrics-column { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  margin-top: 15px; 
+}
 
-.perf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.v-box { background: #0f172a; color: #22c55e; padding: 20px; border-radius: 8px; font-family: monospace; font-size: 1.2rem; margin-top: 10px; }
+/* 统一样式：perf-item 和 metric-card 表现一致 */
+.perf-item, .metric-card {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 120px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.perf-item:hover, .metric-card:hover {
+  background: rgba(30, 41, 59, 0.8);
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* 标签样式 */
+.perf-item label, .metric-card .m-label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* 数值盒子样式 */
+.v-box, .m-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* 数值中的单位/斜杠 */
+.v-box small, .m-value small {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+}
+
+/* -----------------------------------------------------------
+   4. 分隔装饰线：左侧彩色发光条 (粉-紫-蓝)
+----------------------------------------------------------- */
+.perf-item::before, .metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+/* 依次分配粉、紫、蓝 */
+.perf-item:nth-child(1)::before, .metric-card:nth-child(1)::before { 
+  background: #f472b6; box-shadow: 2px 0 10px rgba(244, 114, 182, 0.4); 
+} 
+.perf-item:nth-child(2)::before, .metric-card:nth-child(2)::before { 
+  background: #a855f7; box-shadow: 2px 0 10px rgba(168, 85, 247, 0.4); 
+} 
+.perf-item:nth-child(3)::before, .metric-card:nth-child(3)::before { 
+  background: #3b82f6; box-shadow: 2px 0 10px rgba(59, 130, 246, 0.4); 
+}
+
+/* -----------------------------------------------------------
+   5. 其他基础样式保持
+----------------------------------------------------------- */
+.admin-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 50px; font-weight: 800; color: #fff; font-size: 1.2rem; }
+.nav-list { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.nav-item { padding: 16px 20px; border-radius: 12px; cursor: pointer; color: #94a3b8; transition: 0.3s; }
+.nav-item.active { background: rgba(59, 130, 246, 0.1); color: #fff; border: 1px solid rgba(59, 130, 246, 0.5); }
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  /* 强制固定布局，确保列宽按比例分配 */
+  table-layout: fixed; 
+}
+
+/* 定义列宽比例：资源名称占 40%，其他三列平分 */
+.data-table th:nth-child(1), .data-table td:nth-child(1) { width: 40%; }
+.data-table th:nth-child(2), .data-table td:nth-child(2) { width: 20%; }
+.data-table th:nth-child(3), .data-table td:nth-child(3) { width: 20%; }
+.data-table th:nth-child(4), .data-table td:nth-child(4) { width: 20%; }
+
+.data-table th {
+  text-align: left;
+  padding: 18px 16px;
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02); /* 给表头一点背景色，更易对齐 */
+}
+
+.data-table td {
+  padding: 18px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  color: #f8fafc;
+  vertical-align: middle;
+  /* 防止内容过长撑破布局 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 进度条容器对齐微调 */
+.mini-progress {
+  width: 80%; /* 限制进度条宽度，不要太贴边 */
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mini-progress .fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* 标签样式微调 */
+.tag.blue {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  font-size: 12px;
+}.status-on { color: #10b981; font-weight: bold; }
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
 </style>
