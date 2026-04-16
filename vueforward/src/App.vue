@@ -3,19 +3,19 @@
     <div class="particles-bg"></div>
 
     <nav v-if="showNav" class="main-nav animate__animated animate__fadeInDown">
-      <div class="nav-logo">OS-AI 智学系统</div>
+      <div class="nav-logo">SMART BRAIN-AI 闲趣智脑</div>
       
       <div class="nav-links">
-        <router-link to="/ImmersiveLab" class="nav-link">AI实验室</router-link>
-        <router-link to="/HomeworkAssistant" class="nav-link">作业助手</router-link>
-        <router-link to="/LearningDashboard" class="nav-link">学业评价</router-link>
-        
+        <router-link to="/ImmersiveLab" class="nav-link" data-text="AI实验室"></router-link>
+        <router-link to="/HomeworkAssistant" class="nav-link" data-text="作业助手"></router-link>
+        <router-link to="/LearningDashboard" class="nav-link" data-text="学业评价"></router-link>
         <router-link 
           v-if="isLoggedIn && userRole === 'teacher'" 
           to="/TeacherConsole" 
-          class="nav-link"
-        >教师后台</router-link>
-
+          class="nav-link" 
+          data-text="教师后台"
+        ></router-link>
+        
         <UserAvatar v-if="isLoggedIn" />
       </div>
     </nav>
@@ -95,14 +95,14 @@ watch(() => route.path, (newPath) => {
 </script>
 
 <style>
-/* 基础重置 */
+/* --- 1. 基础重置与背景 --- */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
   overflow: hidden;
-  background: #0a0e14; /* 深色科技背景 */
+  background: #0a0e14; 
 }
 
 #app {
@@ -113,53 +113,42 @@ body, html {
   color: #e0e0e0;
 }
 
-/* 粒子背景动画 */
-.particles-bg {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
-  overflow: hidden;
-}
-
-.particles-bg::after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  box-shadow: 
-    10vw 20vh 1px #fff, 30vw 50vh 1px #fff, 70vw 10vh 2px #fff,
-    90vw 80vh 1px #fff, 40vw 90vh 2px #fff, 15vw 40vh 1px #fff;
-  border-radius: 50%;
-  opacity: 0.3;
-  animation: bg-move 100s linear infinite;
-}
-
-@keyframes bg-move {
-  from { transform: translateY(0); }
-  to { transform: translateY(-1000px); }
-}
-
-/* 导航样式修改 */
+/* --- 2. 导航栏容器 --- */
 .main-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
   height: 64px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 14, 20, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 100;
 }
 
+/* ✨ Logo：流光渐变效果 --- 会自动变换颜色 */
 .nav-logo {
   font-size: 1.4rem;
-  font-weight: bold;
-  background: linear-gradient(120deg, #409eff, #71b7ff);
+  font-weight: 800;
+  /* 增加渐变尺寸以实现移动效果 */
+  background: linear-gradient(
+    135deg, 
+    #409eff, 
+    #ff69b4, 
+    #8b5cf6, 
+    #409eff
+  );
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.3));
+  animation: flowGradient 6s ease infinite; /* 颜色变换动画 */
+}
+
+@keyframes flowGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .nav-links {
@@ -168,59 +157,94 @@ body, html {
   align-items: center;
 }
 
-.nav-link {
-  text-decoration: none;
-  color: #909399;
-  font-size: 1rem;
-  transition: all 0.3s;
-}
-
-.nav-link:hover, .router-link-active {
-  color: #409eff;
-  text-shadow: 0 0 10px rgba(64, 158, 255, 0.5);
-}
-
-/* 内容容器 */
-.view-container {
-  flex: 1;
-  overflow: hidden;
+/* --- 3. 导航链接：彻底干掉默认蓝色 --- */
+/* 使用 a.nav-link 提高优先级，确保覆盖所有浏览器的默认 link 颜色 */
+a.nav-link {
+  text-decoration: none !important;
   position: relative;
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  overflow: hidden;
+  /* 初始颜色强制设为淡灰色 */
+  color: rgba(255, 255, 255, 0.6) !important; 
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-/* 页面切换动画 */
-.fade-transform-enter-active,
-.fade-transform-leave-active {
-  transition: all 0.4s ease;
+/* 移除所有伪元素内容，通过 data-text 渲染 */
+a.nav-link::before,
+a.nav-link::after {
+  content: attr(data-text); 
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s cubic-bezier(0.6, 0, 0.2, 1);
 }
 
-.fade-transform-enter-from {
-  opacity: 0;
-  transform: translateX(-30px);
+/* 候场文字颜色：统一改为白色或主题色 */
+a.nav-link::after {
+  position: absolute;
+  left: 0;
+  top: 100%; 
+  color: #ffffff !important; /* 滚动出来的字默认先给白色 */
 }
 
-.fade-transform-leave-to {
-  opacity: 0;
-  transform: translateX(30px);
+/* 悬浮 & 激活状态：隐藏原文字，露出滚动后的伪元素 */
+a.nav-link:hover,
+a.nav-link.router-link-active {
+  color: transparent !important; 
 }
 
-/* 页脚样式 */
-.app-footer {
-  height: 32px;
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  color: #606266;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+a.nav-link:hover::before,
+a.nav-link.router-link-active::before {
+  transform: translateY(-100%);
 }
 
-.divider {
-  margin: 0 15px;
-  opacity: 0.3;
+a.nav-link:hover::after,
+a.nav-link.router-link-active::after {
+  transform: translateY(-100%);
 }
 
-.security-tag {
-  color: #67c23a;
+/* --- 4. 统一按钮特定高亮色 (优先级加满) --- */
+
+/* AI实验室 - 蓝色 */
+a.nav-link[to="/ImmersiveLab"]:hover::after,
+a.nav-link[to="/ImmersiveLab"].router-link-active::after {
+  color: #409eff !important;
+  text-shadow: 0 0 10px rgba(64, 158, 255, 0.6);
 }
+
+/* 作业助手 - 粉色 */
+a.nav-link[to="/HomeworkAssistant"]:hover::after,
+a.nav-link[to="/HomeworkAssistant"].router-link-active::after {
+  color: #ff69b4 !important;
+  text-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+}
+
+/* 学业评价 - 紫色 */
+a.nav-link[to="/LearningDashboard"]:hover::after,
+a.nav-link[to="/LearningDashboard"].router-link-active::after {
+  color: #8b5cf6 !important;
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
+}
+
+/* 教师后台 - 金色 */
+a.nav-link[to="/TeacherConsole"]:hover::after,
+a.nav-link[to="/TeacherConsole"].router-link-active::after {
+  color: #ffda6a !important;
+  text-shadow: 0 0 10px rgba(255, 218, 106, 0.5);
+}
+
+/* --- 5. 其他组件样式 --- */
+.view-container { flex: 1; overflow: hidden; position: relative; }
+.app-footer { height: 32px; background: rgba(0, 0, 0, 0.3); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #606266; }
+.divider { margin: 0 15px; opacity: 0.3; }
+.security-tag { color: #67c23a; }
+
+/* 页面过渡动画 */
+.fade-transform-enter-active, .fade-transform-leave-active { transition: all 0.4s ease; }
+.fade-transform-enter-from { opacity: 0; transform: translateX(-30px); }
+.fade-transform-leave-to { opacity: 0; transform: translateX(30px); }
 </style>
