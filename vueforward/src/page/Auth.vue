@@ -1,8 +1,25 @@
 <template>
     <div class="auth-wrapper">
-        <PixelBlast 
-            text="LEISURELY FUN&#10;SMART BRAIN" 
-        />
+        <div class="background-layers">
+            <PixelBlast text="LEISURELY FUN&#10;SMART BRAIN" />
+            
+            <div class="bg-layer-item">
+    <div class="bg-layer-item">
+    <ColorBends 
+        variant="circle" 
+        color="#C4B5FD"
+        :pixelSize="3.5"
+        :liquid="false"
+        :enableRipples="true"
+        :patternDensity="0.30"    
+        :patternScale="3.4"
+        :pixelSizeJitter="0.08"   
+        :speed="0.55"
+        :noiseAmount="0"
+    />
+</div>
+</div>
+        </div>
         <div class="bg-blobs">
         <div class="blob"></div>
         <div class="blob"></div>
@@ -104,6 +121,7 @@ const codeSent = ref(false);     // 控制按钮是否进入倒计时状态
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 import PixelBlast from '../components/PixelBlast.vue';
+import ColorBends from '../components/ColorBends.vue';
 
 const router = useRouter();
 const isLogin = ref(true);
@@ -206,13 +224,15 @@ const handleRegister = async () => {
     background: #020617; /* 极深背景色 */
     position: relative;
     overflow: hidden;
-}
+    z-index: 10;
 
+}
 /* --- 核心卡片：增强阴影与突出感 --- */
 .auth-card {
     width: 100%;
     max-width: 380px;
-    max-height: 90vh;
+    max-height: 70vh;
+    min-width: 30vh;
     overflow-y: auto;
     background: rgba(255, 255, 255, 0.06); 
     backdrop-filter: blur(20px);
@@ -226,6 +246,7 @@ const handleRegister = async () => {
         0 0 20px rgba(59, 130, 246, 0.15),
         inset 0 1px 1px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease;
+    margin-top: 200px;
 }
 
 /* 隐藏滚动条但保留功能 */
@@ -278,7 +299,31 @@ const handleRegister = async () => {
     background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     transition: 0.4s;
 }
+.background-layers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;           /* 背景整体不拦截鼠标 */
+}
 
+.bg-layer-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* 重要：让 PixelBlast 的文字区域可以接收鼠标事件 */
+.art-text-container,
+.text-aligner,
+.hover-char {
+    pointer-events: auto !important;   /* 恢复文字的 hover 效果 */
+}
 .input-field input:focus ~ .bar { width: 100%; }
 
 /* --- 身份选择行 --- */
