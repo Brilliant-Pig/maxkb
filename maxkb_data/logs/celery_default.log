@@ -222,3 +222,87 @@ User information: uid=0 euid=0 gid=0 egid=0
                 .> celery           exchange=celery(direct) key=celery
                 
 
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.584 seconds.
+Prefix dict has been built successfully.
+/opt/py3/lib/python3.11/site-packages/celery/platforms.py:841: SecurityWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  warnings.warn(SecurityWarning(ROOT_DISCOURAGED.format(
+ 
+ -------------- celery@36472a7e9d5b v5.5.3 (immunity)
+--- ***** ----- 
+-- ******* ---- Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.41 2026-03-01 15:23:10
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         MaxKB:0x7951278d7790
+- ** ---------- .> transport:   redis://:**@127.0.0.1:6379/0
+- ** ---------- .> results:     redis://:**@127.0.0.1:6379/0
+- *** --- * --- .> concurrency: 10 (thread)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.372 seconds.
+Prefix dict has been built successfully.
+/opt/py3/lib/python3.11/site-packages/celery/platforms.py:841: SecurityWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  warnings.warn(SecurityWarning(ROOT_DISCOURAGED.format(
+ 
+ -------------- celery@36472a7e9d5b v5.5.3 (immunity)
+--- ***** ----- 
+-- ******* ---- Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.41 2026-03-02 20:57:09
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         MaxKB:0x7bd088546790
+- ** ---------- .> transport:   redis://:**@127.0.0.1:6379/0
+- ** ---------- .> results:     redis://:**@127.0.0.1:6379/0
+- *** --- * --- .> concurrency: 10 (thread)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.776 seconds.
+Prefix dict has been built successfully.
+/opt/py3/lib/python3.11/site-packages/celery/platforms.py:841: SecurityWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  warnings.warn(SecurityWarning(ROOT_DISCOURAGED.format(
+ 
+ -------------- celery@36472a7e9d5b v5.5.3 (immunity)
+--- ***** ----- 
+-- ******* ---- Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.41 2026-03-03 16:25:03
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         MaxKB:0x7617c7307c90
+- ** ---------- .> transport:   redis://:**@127.0.0.1:6379/0
+- ** ---------- .> results:     redis://:**@127.0.0.1:6379/0
+- *** --- * --- .> concurrency: 10 (thread)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
